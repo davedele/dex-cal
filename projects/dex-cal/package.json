@@ -1,5 +1,5 @@
 {
-  "name": "dex-cal2",
+  "name": "dex-cal",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^9.0.7",

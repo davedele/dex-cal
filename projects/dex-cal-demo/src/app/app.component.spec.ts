@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'dex-cal2-demo'`, () => {
+  it(`should have as title 'dex-cal-demo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('dex-cal2-demo');
+    expect(app.title).toEqual('dex-cal-demo');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('dex-cal2-demo app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('dex-cal-demo app is running!');
   });
 });

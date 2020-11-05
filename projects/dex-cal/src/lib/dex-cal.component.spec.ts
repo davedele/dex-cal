@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DexCal2Component } from './dex-cal2.component';
+import { DexCal2Component } from './dex-cal.component';
 
 describe('DexCal2Component', () => {
   let component: DexCal2Component;

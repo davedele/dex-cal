@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DexCalOptions } from '../../../dex-cal2/src/lib/models';
+import { DexCalOptions } from '../../../dex-cal/src/lib/models';
 
 @Component({
   selector: 'app-root',

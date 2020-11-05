@@ -31,8 +31,8 @@ const dateValidator = (): ValidatorFn => {
 
 @Component({
   selector: 'lib-dex-cal',
-  templateUrl: './dex-cal2.component.html',
-  styleUrls: ['./dex-cal2.component.css'],
+  templateUrl: './dex-cal.component.html',
+  styleUrls: ['./dex-cal.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 

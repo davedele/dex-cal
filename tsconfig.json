@@ -19,8 +19,8 @@
       "dom"
     ],
     "paths": {
-      "dex-cal2": [
-        "dist/dex-cal2"
+      "dex-cal": [
+        "dist/dex-cal"
       ]
     }
   },
