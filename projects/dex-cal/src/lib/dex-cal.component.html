@@ -1,14 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="left-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-        <path d="M0 0h24v24H0z" fill="none" />
-    </symbol>
-    <symbol id="right-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-        <path d="M0 0h24v24H0z" fill="none" />
-    </symbol>
-</svg>
-
 <div class="toggle" [class.cal-disabled]="disabled" (click)="toggleCalendar()">
     <span>{{allOptions.label}}:</span>
     <span>{{selectedRangeText}}</span>
@@ -19,6 +8,17 @@
 </div>
 
 <div data-calendar="dex">
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="cal-left-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </symbol>
+        <symbol id="cal-right-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+        </symbol>
+    </svg>
 
     <div class="calendar-container" *ngIf="openCalendar">
 
@@ -90,57 +90,61 @@
             </div>
 
             <div class="contain contain-select">
-                <div class="control-group">
+                <div class="control-group" [class.menu-open]="toggleMm">
+                    <button class="arrow left" (click)="previousMonth()">
+                        <svg class="svg-icon">
+                            <use href="#cal-left-arrow"></use>
+                        </svg>
+                    </button>
                     <div class="select-control">
-                        <div class="form-control select" #monthSelect (click)="toggleMm = !toggleMm">
+                        <div class="form-control select month" #monthSelect (click)="toggleMm = !toggleMm">
                             {{months[selectedMonth]}}
                         </div>
                         <ul [class.show]="toggleMm" class="select-menu">
                             <div>
                                 <div class="m1" *ngFor="let month of months; let i = index"
                                     (click)="onMonthSelect(month)">
-                                    <div *ngIf="i+1 <= 6">{{month}} <span>0{{i + 1}}</span></div>
+                                    <div>{{month}}
+                                        <span *ngIf="i+1 <= 9">0{{i + 1}}</span>
+                                        <span *ngIf="i+1 > 9">{{i + 1}}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="m1" *ngFor="let month of months; let i = index"
-                                    (click)="onMonthSelect(month)">
-                                    <div *ngIf="i+1 > 6">{{month}} <span>{{i + 1}}</span></div>
-                                </div>
-                            </div>
+                            <!-- <div>
+                                <div class=" m1" *ngFor="let month of months; let i = index"
+                                            (click)="onMonthSelect(month)">
+                                            <div *ngIf="i+1 > 6">{{month}} <span>{{i + 1}}</span></div>
+                                    </div>
+                                </div> -->
                         </ul>
+                        <div *ngIf="toggleMm" class="select-menu--overlay" (mousedown)="toggleMm = false"></div>
                     </div>
-                    <button class="arrow" (click)="previousMonth()">
+                    <button class="arrow right" (click)="nextMonth()">
                         <svg class="svg-icon">
-                            <use href="#left-arrow"></use>
-                        </svg>
-                    </button>
-                    <button class="arrow" (click)="nextMonth()">
-                        <svg class="svg-icon">
-                            <use href="#right-arrow"></use>
+                            <use href="#cal-right-arrow"></use>
                         </svg>
                     </button>
                 </div>
                 <div class="control-group">
+                    <button class="arrow left" (click)="previousYear()">
+                        <svg class="svg-icon">
+                            <use href="#cal-left-arrow"></use>
+                        </svg>
+                    </button>
                     <div class="select-control">
-                        <div class="form-control select" #yearSelect (click)="toggleYr = !toggleYr">
+                        <div class="form-control select" disabled #yearSelect>
                             {{selectedYear}}
                         </div>
-                        <ul [class.show]="toggleYr" class="select-menu year">
+                        <!-- <ul [class.show]="toggleYr" class="select-menu year">
                             <li class="year" *ngFor="let year of years; let i = index"
                                 (click)="onYearSelect(year);$event.stopPropagation()">
                                 {{year}}
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
-                    <button class="arrow" (click)="previousYear()">
+                    <button class="arrow right" (click)="nextYear()">
                         <svg class="svg-icon">
-                            <use href="#left-arrow"></use>
-                        </svg>
-                    </button>
-                    <button class="arrow" (click)="nextYear()">
-                        <svg class="svg-icon">
-                            <use href="#right-arrow"></use>
+                            <use href="#cal-right-arrow"></use>
                         </svg>
                     </button>
                 </div>

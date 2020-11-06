@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DexCal2Component } from './dex-cal.component';
+import { DexCalComponent } from './dex-cal.component';
 
-describe('DexCal2Component', () => {
-  let component: DexCal2Component;
-  let fixture: ComponentFixture<DexCal2Component>;
+describe('DexCalComponent', () => {
+  let component: DexCalComponent;
+  let fixture: ComponentFixture<DexCalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DexCal2Component ]
+      declarations: [ DexCalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DexCal2Component);
+    fixture = TestBed.createComponent(DexCalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

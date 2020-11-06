@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DexCal2Service } from './dex-cal.service';
+import { DexCalService } from './dex-cal.service';
 
-describe('DexCal2Service', () => {
-  let service: DexCal2Service;
+describe('DexCalService', () => {
+  let service: DexCalService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DexCal2Service);
+    service = TestBed.inject(DexCalService);
   });
 
   it('should be created', () => {

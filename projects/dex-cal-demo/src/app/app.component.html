@@ -297,7 +297,7 @@
   <!-- <div class="card highlight-card card-small">
   </div> -->
 
-  <h2>dex-cal</h2>
+  <h2>dex-cal 123</h2>
   <p>A new and shiny Date Range selector</p>
 
   <input type="hidden" #selection>
@@ -318,7 +318,7 @@
 
   <div [ngSwitch]="selection.value">
     <ng-container *ngSwitchDefault>
-      <lib-dex-cal [options]="calendarOptions"></lib-dex-cal>
+      <dex-cal [options]="calendarOptions"></dex-cal>
       <div class="terminal">
         <pre>&lt;dex-cal [options]="calendarOptions"&gt;&lt;/dex-cal&gt;</pre>
       </div>
@@ -328,7 +328,7 @@
     </ng-container>
 
     <ng-container *ngSwitchCase="'range'">
-      <lib-dex-cal [options]="calendarOptionsWithDefaultRange"></lib-dex-cal>
+      <dex-cal [options]="calendarOptionsWithDefaultRange"></dex-cal>
       <div class="terminal">
         <pre>&lt;dex-cal [options]="calendarOptionsWithDefaultRange"&gt;&lt;/dex-cal&gt;</pre>
       </div>
@@ -338,7 +338,7 @@
     </ng-container>
 
     <ng-container *ngSwitchCase="'custom'">
-      <lib-dex-cal [options]="calendarOptions" [startDate]="startDate" [endDate]="endDate"></lib-dex-cal>
+      <dex-cal [options]="calendarOptions" [startDate]="startDate" [endDate]="endDate"></dex-cal>
       <div class="terminal">
         <pre>&lt;dex-cal [options]="calendarOptions"&gt;&lt;/dex-cal&gt;</pre>
       </div>

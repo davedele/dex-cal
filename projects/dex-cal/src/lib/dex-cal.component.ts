@@ -30,13 +30,13 @@ const dateValidator = (): ValidatorFn => {
 };
 
 @Component({
-  selector: 'lib-dex-cal',
+  selector: 'dex-cal',
   templateUrl: './dex-cal.component.html',
   styleUrls: ['./dex-cal.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 
-export class DexCal2Component implements OnInit {
+export class DexCalComponent implements OnInit {
   @Input() options: DexCalOptions;
   @Input() disabled: boolean;
   @Output() selected = new EventEmitter<DexSelectedRange>();
@@ -315,6 +315,7 @@ export class DexCal2Component implements OnInit {
     this.openCalendar = false;
     this.isCustomRange = false;
     this.startCustomRangeSelection = false;
+    this.toggleMm = false;
     this.startDate = this.backupStartDate;
     this.endDate = this.backupEndDate;
     if (this.backupSelectedMonth) {
@@ -331,11 +332,7 @@ export class DexCal2Component implements OnInit {
     if (!targetElement) {
       return;
     }
-    // const clickedCtrl = this.elemRef.nativeElement.contains(targetElement);
-    // if (!clickedCtrl) {
-    //   this.toggleMm = false;
-    //   this.toggleYr = false;
-    // }
+
     const clickedInside = this.elemRef.nativeElement.contains(targetElement);
     if (!clickedInside) {
       this.cancel();
